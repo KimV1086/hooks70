@@ -1,12 +1,20 @@
-import React from 'react';
-import InputForm from "./components/InputForm/InputForm";
-import './App.css';
+import React, {useState} from 'react';
 import Container from "reactstrap/lib/Container";
+import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 
-function App() {
+function App () {
+   const valState = '';
+   const [value, setValue] = useState(valState);
+
   return (
     <Container>
-        <InputForm/>
+        <Form>
+            <FormGroup>
+                <Label for="exampleEmail">TV Show</Label>
+                <Input type="text" name="text"  id="exampleEmail" placeholder="Enter TV show"/>
+            </FormGroup>
+            <Button>Submit</Button>
+        </Form>
     </Container>
   );
 }
