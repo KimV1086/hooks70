@@ -6,6 +6,9 @@ function App () {
    const valState = '';
    const [value, setValue] = useState(valState);
 
+   const addVal = (e) => {
+     setValue(e);
+   };
   return (
     <Container>
         <Form>
