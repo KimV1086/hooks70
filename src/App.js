@@ -1,25 +1,17 @@
-import React, {useState} from 'react';
-import Container from "reactstrap/lib/Container";
-import {Button, Form, FormGroup, Input, Label} from "reactstrap";
+import React from 'react';
+import {Route, Switch} from "react-router-dom";
+import TvShow from "./containers/TvShow/TvShow";
+import ShowMovie from './components/ShowMovie/ShowMovie';
 
-function App () {
-   const valState = '';
-   const [value, setValue] = useState(valState);
+const App = () => (
+   <div>
+       <Switch>
+           <Route path="/" exact component={TvShow} />
+           <Route path="/shows/:id" exact component={ShowMovie}/>
+           <Route render={() => <h1>Not found</h1>}/>
+       </Switch>
+   </div>
 
-   const addVal = (e) => {
-     setValue(e);
-   };
-  return (
-    <Container>
-        <Form>
-            <FormGroup>
-                <Label for="exampleEmail">TV Show</Label>
-                <Input type="text" name="text"  id="exampleEmail" placeholder="Enter TV show"/>
-            </FormGroup>
-            <Button>Submit</Button>
-        </Form>
-    </Container>
-  );
-}
+);
 
 export default App;
