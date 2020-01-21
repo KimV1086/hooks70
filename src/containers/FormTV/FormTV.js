@@ -3,7 +3,7 @@ import axios from 'axios';
 import MainTV from '../MainTV/MainTV'
 import {Col, Container, Media} from "reactstrap";
 
-const ShowTV = (props) => {
+const FormTV = (props) => {
     let showData = null;
     const [loadShow, setLoadShow] = useState(showData);
 
@@ -16,8 +16,10 @@ const ShowTV = (props) => {
         showData = response.data;
         setLoadShow(response.data);
 
-        if (response.data.summary.replace(/<\/?[^>]+>/g,'') !== null || response.data.summary.replace(/<\/?[^>]+>/g,'') !== undefined) {
-            setShowText(response.data.summary.replace(/<\/?[^>]+>/g,''));
+
+        if (response.data.summary.replace(/<\/?[^>]+>/g, '') !== null ||
+            response.data.summary.replace(/<\/?[^>]+>/g, '') !== undefined) {
+            setShowText(response.data.summary.replace(/<\/?[^>]+>/g, ''));
         }
     };
 
@@ -31,7 +33,7 @@ const ShowTV = (props) => {
             {loadShow ?
                 <Media>
                     {loadShow.image ?
-                        <Media src={loadShow.image.medium} alt="Generic placeholder image"/>
+                        <Media src={loadShow.image.medium} alt={loadShow.name}/>
                         : null
                     }
                     <Col>
@@ -48,4 +50,4 @@ const ShowTV = (props) => {
     );
 };
 
-export default ShowTV;
+export default FormTV;

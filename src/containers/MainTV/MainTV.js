@@ -3,18 +3,13 @@ import {Form, FormGroup, Label, Input, ListGroup} from 'reactstrap';
 import axios from 'axios';
 import LinkShow from '../../components/LinkShow/LinkShow';
 
-const TVShowInput = (props) => {
+const FormTV = (props) => {
 
     const valueInfo = null;
     const [valInput, setValInput] = useState(valueInfo);
 
     let showInfo = null;
     const [shows, setShows] = useState(showInfo);
-
-    const inpValChange = (value) => {
-        data(value);
-        setValInput(value);
-    };
 
     const data = async (value) => {
         if (valInput) {
@@ -28,17 +23,24 @@ const TVShowInput = (props) => {
         }
     };
 
+    const inpValChange = (value) => {
+        data(value).then();
+        setValInput(value);
+    };
+
     const deleteShow = () => {
         const showDelete = null;
         setShows(showDelete);
     };
 
+
+
     return (
         <Fragment>
             <Form>
                 <FormGroup>
-                    <Label for="text">Search for TV Shows</Label>
-                    <Input type="text" name="text" id="text" autoComplete="off" placeholder="Enter name of movie"
+                    <Label for="text">TV Shows</Label>
+                    <Input type="text" name="text" id="text" autoComplete="off" placeholder="name TV Show"
                            onChange={(event) => inpValChange(event.target.value)}/>
                 </FormGroup>
             </Form>
@@ -54,4 +56,4 @@ const TVShowInput = (props) => {
     );
 };
 
-export default TVShowInput;
+export default FormTV;

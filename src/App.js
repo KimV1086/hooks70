@@ -1,14 +1,13 @@
 import React from 'react';
 import {Route, Switch} from "react-router-dom";
 import TvShow from "./containers/MainTV/MainTV";
-import ShowTV from './containers/ShowTV/ShowTV';
+import FormTV from './containers/FormTV/FormTV';
 
 
 const App = () => (
    <Switch>
        <Route path="/" exact component={TvShow} />
-       <Route path="/shows/:id" exact component={ShowTV}/>
-       <Route render={() => <h1>Not found</h1>}/>
+       <Route path="/shows/:id" exact component={FormTV}/>
    </Switch>
 );
 
