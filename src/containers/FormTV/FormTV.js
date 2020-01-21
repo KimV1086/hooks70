@@ -20,6 +20,8 @@ const FormTV = (props) => {
         if (response.data.summary.replace(/<\/?[^>]+>/g, '') !== null ||
             response.data.summary.replace(/<\/?[^>]+>/g, '') !== undefined) {
             setShowText(response.data.summary.replace(/<\/?[^>]+>/g, ''));
+        } else {
+            setShowText(response.data.summary)
         }
     };
 

@@ -1,5 +1,5 @@
-import React, {useState, Fragment} from 'react';
-import {Form, FormGroup, Label, Input, ListGroup} from 'reactstrap';
+import React, {useState} from 'react';
+import {Form, FormGroup, Label, Input, ListGroup, Container} from 'reactstrap';
 import axios from 'axios';
 import LinkShow from '../../components/LinkShow/LinkShow';
 
@@ -36,7 +36,7 @@ const FormTV = (props) => {
 
 
     return (
-        <Fragment>
+        <Container>
             <Form>
                 <FormGroup>
                     <Label for="text">TV Shows</Label>
@@ -52,7 +52,7 @@ const FormTV = (props) => {
                 </ListGroup>
                 : null
             }
-        </Fragment>
+        </Container>
     );
 };
 
